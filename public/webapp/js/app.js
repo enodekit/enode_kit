@@ -2,8 +2,10 @@
 angular.module('uiRouterBox', [
     'ui.router',
     'boxControllers',
+    'boxControllers.service',
     'ngTouch',
-    'ngAnimate'
+    'ngAnimate',
+
 ])
 
 .run(
@@ -58,6 +60,7 @@ angular.module('uiRouterBox', [
               url: "/message",
               templateUrl: 'template/message.html',
               controller: "MesCtrl"
+
           })
           .state("alert", {
               url: "/alert",

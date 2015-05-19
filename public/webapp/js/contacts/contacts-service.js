@@ -1,5 +1,5 @@
 angular.module('uiRouterSample.contacts.service', [
-
+  'ui.router'
 ])
 
 // A RESTful factory for retrieving contacts from 'contacts.json'
