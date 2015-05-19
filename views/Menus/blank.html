@@ -1,0 +1,71 @@
+<%- include ..\formhead.html %>
+<form action="/menus/create" method="post" accept-charset="utf-8" enctype="application/x-www-form-urlencoded" >
+<div class="form">
+<fieldset style="border: 1px solid #808080;">
+	<legend>菜单信息</legend>
+<div class="field" style="width: 100%;">
+<label for="object_pid">上级菜单</label>
+
+<select name="menu[pid]" size="1" >
+    <option value="0"  >一级菜单</option>
+    <% list.forEach(function(menu,index){%>
+    <option value="<% menu.cid %>"><% menu.name %></option>
+    <% }) %>
+</select>
+
+</div>
+
+<div class="field" style="width: 50%;">
+	<label for="object_name">
+		菜单名
+	</label>
+	<input id="object_name" class="txt01 " type="text" name="menu[name]" value=""/>			
+	<span class="info"></span>		
+</div>
+<div class="field" style="width: 100%;">
+	<label for="object_url">
+		链接
+	</label>
+	<input id="object_url" class="txt01 " type="text" name="menu[url]" value=""/>				
+	<span class="info"></span>		
+</div>
+<div class="field" style="width: 50%;">
+	<label for="object_target">
+		打开方式
+	</label>
+	<input id="object_target" class="txt01 " type="text" name="menu[target]" value=""/>			
+	<span class="info"></span>		
+</div>
+<div class="field" style="width: 50%;">
+	<label for="object_icon">
+		显示图片
+	</label>
+	<input id="object_icon" class="txt01 " type="text" name="menu[icon]" value=""/>
+	<span class="info"></span>
+</div>
+<div class="field" style="width: 50%;">
+	<label for="object_sort">
+		排序
+	</label>
+	<input id="object_sort" class="txt01 " type="text" name="menu[sort]" value=""/>			
+	<span class="info"></span>		
+</div>
+<div class="field" style="width: 50%;">
+	<label for="object_flag">
+		状态
+	</label>
+	<select id="object_flag" name="menu[flag]">
+			<option value="1">使用</option>
+			<option value="2">停用</option>
+	</select>
+	<span class="info"></span>	
+</div>
+</fieldset>
+<p class="buttons">
+	<input type="hidden" name="menu[_id]" value=""/>
+	<input type="submit" name="_save" value="保存" class="btn01"/>
+	<input type="button" name="_close" value="关闭" class="btn01 option_close"/> 
+</p>
+</div>
+</form>
+<%- include ..\formfooter.html %>
